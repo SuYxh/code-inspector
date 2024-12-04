@@ -31,6 +31,7 @@ export function CodeInspectorPlugin(options: CodeInspectorPluginOptions): any {
     return;
   }
   // 判断是否只在本地启用
+  // close：用来控制插件是否关闭
   let close = false;
   if (options.needEnvInspector) {
     close = true;
@@ -50,10 +51,13 @@ export function CodeInspectorPlugin(options: CodeInspectorPluginOptions): any {
     }
   }
 
+  // 兼容 ESM 和 CommonJS 两种模块系统获取当前文件目录路径
   let compatibleDirname = '';
   if (typeof __dirname !== 'undefined') {
+    // CommonJS 环境下 __dirname 可用（如 Node.js 的 require）
     compatibleDirname = __dirname;
   } else {
+    // ESM 环境下 __dirname 不存在，需要通过 import.meta.url 构造（如 Node.js 的 import）
     compatibleDirname = dirname(fileURLToPath(import.meta.url));
   }
   const params = {
