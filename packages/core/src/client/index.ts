@@ -408,7 +408,7 @@ export class CodeInspectorComponent extends LitElement {
         }
       });
     console.log(
-      `%c[code-inspector-plugin]%c同时按住 ${keys.join(
+      `%c[code-inspector-plugin]%c [Hello] 同时按住 ${keys.join(
         ' %c+ '
       )}%c 时启用功能(点击页面元素可定位至编辑器源代码)`,
       'color: #006aff; font-weight: bolder;',
