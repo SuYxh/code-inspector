@@ -53,10 +53,26 @@ export function getFilePathWithoutExt(filePath: string) {
   return filePath.slice(0, filePath.lastIndexOf('.'));
 }
 
+/**
+ * 标准化文件路径，使其在不同操作系统下保持一致的格式
+ * @param filepath 需要标准化的文件路径
+ * @returns 返回标准化后的路径
+ * 
+ * 使用示例：
+ * 1. Windows 路径：
+ *    normalizePath('C:\\Users\\name\\project')
+ *    返回: 'C:/Users/name/project'
+ * 
+ * 2. Unix 路径：
+ *    normalizePath('/usr/local/bin')
+ *    返回: '/usr/local/bin'
+ */
 export function normalizePath(filepath: string) {
+  // 使用 path.normalize 处理 '..' 和 '.' 等特殊路径
   let normalizedPath = path.normalize(filepath);
 
   // Convert Windows path separators to Mac path separators
+  // 在 Windows 系统上，将反斜杠 (\) 转换为正斜杠 (/)
   if (process.platform === 'win32') {
     normalizedPath = normalizedPath.replace(/\\/g, '/');
   }

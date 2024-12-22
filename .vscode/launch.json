@@ -9,14 +9,16 @@
       "request": "launch",
       "runtimeArgs": [
         "run-script",
-        "dev"
+        // "dev"
+        "start"
       ],
       "runtimeExecutable": "pnpm",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "type": "node",
-      "cwd": "${workspaceFolder}/demos/vite-vue3"
+      // "cwd": "${workspaceFolder}/demos/vite-vue3"
+      "cwd": "${workspaceFolder}/demos/webpack-react"
     }
   ]
 }
