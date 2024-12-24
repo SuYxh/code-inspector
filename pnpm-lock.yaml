@@ -5,6 +5,8 @@ importers:
   .:
     specifiers:
       '@vitest/coverage-v8': 2.1.4
+      chalk: ^4.1.1
+      dotenv: ^16.1.4
       fs-extra: ^10.0.0
       husky: ^8.0.3
       jsdom: ^25.0.1
@@ -12,6 +14,9 @@ importers:
       rimraf: ^5.0.5
       vitest: ^2.1.4
       zip-a-folder: ^3.1.7
+    dependencies:
+      chalk: 4.1.1
+      dotenv: 16.4.7
     devDependencies:
       '@vitest/coverage-v8': 2.1.4_vitest@2.1.8
       fs-extra: 10.1.0
@@ -10859,7 +10864,7 @@ packages:
     dependencies:
       ansi-align: 3.0.1
       camelcase: 7.0.1
-      chalk: 5.0.1
+      chalk: 5.3.0
       cli-boxes: 3.0.0
       string-width: 5.1.2
       type-fest: 2.19.0
